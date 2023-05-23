@@ -1,0 +1,81 @@
+@use 'variables';
+
+.event{
+    padding: 80px 0;
+    
+    &-fotos {
+        background-image: linear-gradient(variables.$red1,variables.$red2);
+
+            .event--image {
+                transform-origin: center;
+                margin: 10px;
+            }
+        
+            .event--image:nth-child(1) {
+                transform: skewY(-15deg);
+                margin-top: 40px;
+            }
+        
+            .event--image:nth-child(2) {
+                transform: skewY(0deg);
+            }
+        
+            .event--image:nth-child(3) {
+                transform: skewY(15deg);
+                margin-top: 40px;
+            }
+    }
+
+    &-cartinha {
+        background-image: linear-gradient(variables.$red2,variables.$red2);
+    }
+
+    &-bolo {
+        background-image: linear-gradient(variables.$red2,variables.$red1);
+    }
+
+    &--image-left{
+        .container{
+            flex-direction: row-reverse;
+        }
+    }
+
+
+    .container{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    &--image{
+        max-width: 360px;
+        max-height: 300px;
+        border-radius: 8px;
+    }
+
+    &--description{
+        &-title{
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        &-text{
+            line-height: 22px;
+        }
+    }
+
+    @media (max-width:640px){
+        .container{
+            display: block;
+            text-align: center;
+        }
+    
+        &--image{
+            width: 100%;
+            max-height: none;
+            padding-top: 20px;
+        }
+    }
+}
